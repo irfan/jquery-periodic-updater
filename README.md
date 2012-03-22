@@ -1,11 +1,26 @@
-# jQuery Periodic Updater
-[jQuery Periodic Updater](http://irfandurmus.com/projects/jquery-periodic-updater) is a [jQuery](http://jquery.com) plugin.
+[jQuery Periodic Updater Plugin](http://irfandurmus.com/projects/jquery-periodic-updater/) 
+======================================================================================
 
-## Author
-Copyright 2010, Irfan Durmus
+How to use 
+--------------------------------------
 
-## License
-Dual licensed under the MIT or GPL Version 2 licenses.
+### Include needed files
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="updater.js"></script>
+
+### Initialize the plugin
+	   $.updater({
+	      url: 'request.php',
+	      interval: 15000
+	   });
+
+### Using with callback method 
+	$.updater({
+		url: 'request.php',
+		interval: 15000
+	}, function(){
+		// body of callback method is here.
+	});
 
 
-[Please visit plugin page to demo, how to use and change logs](http://irfandurmus.com/projects/jquery-periodic-updater)
+
