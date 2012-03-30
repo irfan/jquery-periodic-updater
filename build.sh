@@ -4,7 +4,7 @@
 # Please update these lines before use it
 
 YUI='../../tools/yuicompressor/build/yuicompressor-2.4.7.jar'
-FILES='src/*.js src/*.css'
+FILES='src/*.js'
 OUTPUT_DIR='min'
 
 for FILE in $FILES 
