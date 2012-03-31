@@ -12,8 +12,8 @@ How to use
 
 ### Example HTML
     
-    &lt;ul id="myList"&gt;
-    &lt;/ul&gt;
+    <ul id="myList">
+    </ul>
 
 
 ### Using with basic options
