@@ -1,6 +1,6 @@
 [jQuery Periodic Updater Plugin](http://irfandurmus.com/projects/jquery-periodic-updater/) 
 ======================================================================================
-Please check [full documentation](http://irfandurmus.com/projects/jquery-periodic-updater/)
+Please check [full documentation](http://irfandurmus.com/projects/jquery-periodic-updater/) for other options of this plugin
 How to use 
 --------------------------------------
 
