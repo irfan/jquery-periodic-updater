@@ -24,7 +24,7 @@ How to use
             data: {userId:1}                // Gonna send to server
         },
         function(result, status, response){   // Callback method..
-            $('#myList').append('&lt;li&gt;'+result.name + ' | ' + result.country+'&lt;/li&gt;');
+            $('#myList').append('<li>'+result.name + ' | ' + result.country+'</li>');
         });
     });
 
