@@ -14,9 +14,7 @@
  *
  */
 
-;(function($){
-    // global variables
-    doc = $(document);
+;(function($, doc){
     
     $.fn.updater = function(userOpts, callback){
         
@@ -133,9 +131,9 @@
             };
             return;
         }
-    }
+    },
     
-    var defaults = {
+    defaults = {
         url: undefined,
         data: undefined,
         method: 'post',
@@ -149,4 +147,6 @@
     $.updater.start = actions.reboot;
     $.updater.debug = actions.debug;
     
-})(jQuery);
+})(jQuery, document);
+
+
