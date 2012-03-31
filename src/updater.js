@@ -4,12 +4,12 @@
  * Copyright Nov 03 2010, Irfan Durmus - http://irfandurmus.com/
  *
  * @Version
- * 0.2 Beta
+ * 0.2b
  *
  * @License
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
- * See the README file or visit the plugin page.
+ * Visit the plugin page for more information.
  * http://irfandurmus.com/projects/jquery-periodic-updater
  *
  */
