@@ -38,7 +38,6 @@ How to use
         method: 'post',     // method, you can use get or post
         response: 'json'    // response data type, html or json accepted
     }
-    </pre>
 
 
 
