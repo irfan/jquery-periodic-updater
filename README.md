@@ -23,7 +23,7 @@ How to use
             url: 'request.php',             // Request URL
             data: {userId:1}                // Gonna send to server
         },
-        function(result, status, response){   // Callback method..
+        function(result, response){   // Callback method..
             $('#myList').append('<li>'+result.name + ' | ' + result.country+'</li>');
         });
     });
