@@ -15,7 +15,7 @@
  */
 
 ;(function($, doc){
-    
+    doc = $(doc);
     $.fn.updater = function(userOpts, callback){
         
         // extend options
@@ -28,18 +28,14 @@
             callback : callback,    // save the callback function
             interval : interval,    // save the interval to data
             isActive : true,        // avoid double timer,
-            lastRequest: {
-                result: '',
-                status: '',
-                text: ''
-            }
+            lastRequest: ''
         });
         
         // initialize the plugin
-        actions.init();
-        
-        doc.bind('stop.updater', actions.stop);
-        doc.bind('start.updater', actions.reboot);
+        doc.bind('init.updater', actions.init)
+            .bind('start.updater', actions.reboot)
+            .bind('stop.init', actions.stop)
+            .trigger('init.updater');
         return;
     };
     
@@ -60,10 +56,10 @@
             return;
         },
         
-        setStatus: function(response, result){
-            actions.obj().lastRequest.result = result;
-            actions.obj().lastRequest.status = response.status;
-            actions.obj().lastRequest.text = response.statusText;
+        setStatus: function(response){
+            
+            actions.obj().lastRequest = response;
+            
             return;
         },
         
@@ -76,18 +72,18 @@
                 data: opts.data,
                 type: method,
                 dataType: opts.response,
-                success: function(obj, result, response){
+                success: function(obj, response){
                     
                     // set last request response with success
-                    actions.setStatus(response, result);
+                    actions.setStatus(response);
                     
                     // call the callback method
-                    callback(obj, result, response);
+                    callback(obj, response);
                 },
-                error: function(response, result){
+                error: function(response){
                     
                     // set last request response with error
-                    actions.setStatus(response, result);
+                    actions.setStatus(response);
                 }
             })
             return;
@@ -125,7 +121,7 @@
                 console.log('Method: ', actions.obj().options.method);
                 console.log('Data: ', actions.obj().options.data);
                 console.log('Callback: ', actions.obj().callback);
-                console.log('Last Request: ', actions.obj().lastRequest.result, actions.obj().lastRequest.status, actions.obj().lastRequest.text);
+                console.log('Last Request: ', actions.obj().lastRequest);
                 console.log('Requests Continues: ', actions.obj().isActive);
                 console.groupEnd();
             };
